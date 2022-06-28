@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BFragment"
+    android:background="@color/mainbackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_Businessform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="개인사업자인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup_BussinessForm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:checkedButton="@id/radio_Soho"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_Soho"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="개인사업자" />
+
+                        <RadioButton
+                            android:id="@+id/radio_Not_Soho"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="법인" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_Imdae"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_Businessform"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="임대 용도인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup_Yongdo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="horizontal"
+                        android:checkedButton="@id/radio_For_Rent">
+
+                        <RadioButton
+                            android:id="@+id/radio_For_Rent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="임대용도" />
+
+                        <RadioButton
+                            android:id="@+id/radio_Not_For_Rent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="임대용도 아님" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_LoanAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_Imdae"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="대출 금액은 얼마인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etLoanAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:inputType="numberDecimal|numberSigned"
+                        android:hint="원 단위로 입력"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="8dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_Dambo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_LoanAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="보증서나 예적금 담보 대출인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup_Dambo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="horizontal"
+                        android:checkedButton="@id/radio_Not_Dambo">
+
+                        <RadioButton
+                            android:id="@+id/radio_Dambo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="여" />
+
+                        <RadioButton
+                            android:id="@+id/radio_Not_Dambo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="부" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_Jungchaek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_Dambo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="8dp"
+                        android:text="정책 자금대출인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup_Jungchaek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:orientation="horizontal"
+                            android:checkedButton="@id/radio_Not_Jungchaek">
+
+                            <RadioButton
+                                android:id="@+id/radio_Jungchaek"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="정책자금대출" />
+
+                            <RadioButton
+                                android:id="@+id/radio_Not_Jungchaek"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="정책자금대출 아님" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_RtiResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackgroundaccent"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_Jungchaek"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/text_Result1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="RTI 대상?"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_big_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnConfirmB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="입력완료"
+                    android:textSize="@dimen/text_big_dimen"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/enterbutton"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"/>
+                <Button
+                    android:id="@+id/btnNextB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다음"
+                    android:textSize="@dimen/text_big_dimen"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

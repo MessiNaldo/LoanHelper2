@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BFragment"
+    android:background="@color/mainbackground">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLoanAmountD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="대출 금액 : "
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <TextView
+                        android:id="@+id/textLoanAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="원 단위로 적어주세요"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLoanRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cv_LoanAmountD"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="대출 금리는 얼마인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <com.jmy.loanhelper.LoanRateEditText2
+                        android:id="@+id/etLoanRate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="0.00"
+                        android:inputType="numberDecimal"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:maxLength="5"
+                        android:layout_marginLeft="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvDeposit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cvLoanRate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_Deposit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="보증금은 얼마인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <com.jmy.loanhelper.PriceEditText
+                        android:id="@+id/etDeposit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="원 단위로 적어주세요"
+                        android:inputType="number"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvMonthlyRent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cvDeposit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutMonthlyRent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="월 임대료는 얼마인가요?"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+
+                    <com.jmy.loanhelper.PriceEditText
+                        android:id="@+id/etMonthlyRent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="원 단위로 적어주세요"
+                        android:inputType="number"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textSize="@dimen/text_normal_dimen"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:cardCornerRadius="10dp"
+                app:contentPadding="@dimen/cardpadding"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/cardbackground"
+                android:layout_marginTop="@dimen/cardmargintop"
+                android:layout_marginBottom="@dimen/cardmarginbottom"
+                android:layout_marginLeft="@dimen/cardmarginleft"
+                android:layout_marginRight="@dimen/cardmarginright"
+                app:layout_constraintTop_toBottomOf="@+id/cvMonthlyRent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="8dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="스트레스 금리 :"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.00"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="%"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="RTI 적용 금리 :"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:id="@+id/textRtiRate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.00"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="%"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="간주 임대료율 :"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1.20"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="%"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="left">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="인정 월 임대소득 :"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:id="@+id/textInjungRent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="원"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:cardCornerRadius="@dimen/cardmargin"
+                            app:cardElevation="@dimen/cardmargin"
+                            android:layout_marginBottom="@dimen/cardmargin">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="left">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="연간 간주 임대료 :"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+
+                                <TextView
+                                    android:id="@+id/textGanjooRent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="원"
+                                    android:textSize="@dimen/text_normal_dimen"
+                                    android:layout_marginLeft="8dp"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="연이자 상환액 :"
+                            android:textSize="@dimen/text_big_dimen"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+
+                        <TextView
+                            android:id="@+id/textYearlySanghwan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="@dimen/text_big_dimen"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="원"
+                            android:textSize="@dimen/text_big_dimen"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="연간 임대소득 :"
+                            android:textSize="@dimen/text_big_dimen"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+
+                        <TextView
+                            android:id="@+id/textYearlyImdae"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="원"
+                            android:textSize="@dimen/text_big_dimen"
+                            android:textStyle="bold"
+                            android:textColor="@color/textcoloraccent"
+                            android:layout_marginLeft="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMoveFoward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="5dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnPreviousD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이전"
+                    android:textSize="@dimen/text_big_dimen"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"/>
+                <Button
+                    android:id="@+id/btnConfirmD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="입력완료"
+                    android:textSize="@dimen/text_big_dimen"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/enterbutton"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"/>
+                <Button
+                    android:id="@+id/btnNextD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="다음"
+                    android:textSize="@dimen/text_big_dimen"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    android:clickable="true"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

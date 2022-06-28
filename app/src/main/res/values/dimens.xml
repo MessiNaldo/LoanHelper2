@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_small_dimen">10sp</dimen>
+    <dimen name="text_normal_dimen">15sp</dimen>
+    <dimen name="text_big_dimen">20sp</dimen>
+    <dimen name="text_bigger_dimen">30sp</dimen>
+    <dimen name="cardpadding">5dp</dimen>
+    <dimen name="cardmargin">3dp</dimen>
+    <dimen name="cardmargintop">5dp</dimen>
+    <dimen name="cardmarginbottom">5dp</dimen>
+    <dimen name="cardmarginleft">10dp</dimen>
+    <dimen name="cardmarginright">10dp</dimen>
+</resources>
