@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 import java.lang.Thread.sleep
 import kotlin.concurrent.thread
 
+//test
 class MainActivity : AppCompatActivity() {
     val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
     var bundle = Bundle()
